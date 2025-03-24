@@ -1,0 +1,20 @@
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: gora
+  namespace: dev
+  labels:
+    name: gora
+    city: jalun
+spec:
+  containers:
+  - name: gora
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+    - containerPort: 80
+
+

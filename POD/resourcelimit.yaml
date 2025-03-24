@@ -1,0 +1,24 @@
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: apple
+  labels:
+    name: myapp
+  namespace: dev
+spec:
+  containers:
+  - args:
+    - --vm
+    - "1" 
+    - --vm-hang
+    - "1"
+    command:
+    - stress
+    image: polinux/stress
+    name: mem-stress
+    resources:
+      limits:
+        memory: "12Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80

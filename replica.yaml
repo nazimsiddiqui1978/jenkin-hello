@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ahad
+  labels:
+    app: myapp
+    tier: enr
+spec:
+ 
+  replicas: 3
+  selector:
+    matchLabels:
+      env: env
+  template:
+    metadata:
+      labels:
+        env: env
+    spec:
+      containers:
+      - name: betu
+        image: nginx
+      - name: umar
+        image: redis 
+

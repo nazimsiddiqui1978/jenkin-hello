@@ -1,0 +1,17 @@
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: jhansi
+  labels:
+    name: jhansi
+    type: prod
+spec: 
+  type: ClusterIP
+  ports:
+  - targetPort: 80
+    port: 80
+  selector:  
+     name: jhansi
+
+       
+      

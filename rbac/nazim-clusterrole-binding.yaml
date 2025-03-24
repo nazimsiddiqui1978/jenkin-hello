@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: nazim-clusterrole-binding
+subjects:
+- kind: User
+  name: nazim
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: pod-read
+  apiGroup: rbac.authorization.k8s.io
+

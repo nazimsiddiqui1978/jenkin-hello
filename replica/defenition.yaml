@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ahadreplicast
+  labels:
+    env: dev
+    type: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+       env: dev
+       type: prod
+  template:
+    metadata:
+      labels:
+        env: dev
+        type: prod
+    spec:
+      containers:
+        - name: arhan
+          image: nginx
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+          - containerPort: 80
+              
+    
